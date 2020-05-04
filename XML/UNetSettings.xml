@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<unetSettings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<role>Client</role>
+	<maxConnection>5</maxConnection>
+	<address>127.0.0.1</address>
+	<port>7777</port>
+	<connectable>true</connectable>
+	<reconnectable>true</reconnectable>
+	<reconnectInterval>1</reconnectInterval>
+	<channels>
+		<qosType>ReliableSequenced</qosType>
+		<qosType>UnreliableSequenced</qosType>
+	</channels>
+</unetSettings>

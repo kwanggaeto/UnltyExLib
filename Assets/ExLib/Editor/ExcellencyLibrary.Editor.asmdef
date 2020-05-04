@@ -1,0 +1,20 @@
+{
+    "name": "ExcellencyLibrary.Editor",
+    "references": [
+        "GUID:e05cc8913f72f6f4cb8aa8b3734e3e49",
+        "com.unity.multiplayer-hlapi.Runtime",
+        "com.unity.multiplayer-hlapi.Editor",
+        "GUID:06f8f2827fa4d35499182b07397f78a3"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

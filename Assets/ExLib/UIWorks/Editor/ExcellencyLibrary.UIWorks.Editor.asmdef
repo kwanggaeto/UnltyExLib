@@ -1,0 +1,17 @@
+{
+    "name": "ExcellencyLibrary.UIWorks.Editor",
+    "references": [
+        "GUID:58e2e16908ea19a4098d04926570f691"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

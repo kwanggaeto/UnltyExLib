@@ -1,0 +1,15 @@
+{
+    "name": "ExLib.UIKeyboard",
+    "references": [
+        "GUID:e05cc8913f72f6f4cb8aa8b3734e3e49"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

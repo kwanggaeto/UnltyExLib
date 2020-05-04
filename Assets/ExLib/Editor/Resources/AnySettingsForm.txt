@@ -1,0 +1,20 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using UnityEngine;
+
+namespace <namespace>
+{
+    [XmlRoot("<xmlrootname>")]
+    public sealed class <classname> : Settings.SettingsBase<<classname>>
+    {
+
+        private <classname>():base() { }
+        private <classname>(bool singleton) : base(singleton) { }
+
+        protected override void SetDefaultValue()
+        {
+        }
+    }
+}

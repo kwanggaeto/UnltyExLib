@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<assets xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<assetList>
+		<asset type="Texture" loadType="Preload" key="img00"><![CDATA[Images/00.jpg]]></asset>
+		<asset type="Texture" loadType="Preload" key="img01"><![CDATA[http://i.imgur.com/VZdQiLM.jpg]]></asset>
+		<asset type="Binary" loadType="Preload" key="img02"><![CDATA[Images/02.png]]></asset>
+		<asset type="Texture" loadType="Preload" key="img03"><![CDATA[Images/03.jpg]]></asset>
+		<asset type="Texture" loadType="Preload" key="img04"><![CDATA[Images/04.jpg]]></asset>
+		<asset type="Texture" loadType="Preload" key="img05"><![CDATA[Images/05.jpg]]></asset>
+		<asset type="Texture" loadType="Preload" key="img06"><![CDATA[Images/06.jpg]]></asset>
+		<asset type="Texture" loadType="Preload" key="img07"><![CDATA[Images/07.jpg]]></asset>
+		<asset type="Texture" loadType="Preload" key="img08"><![CDATA[Images/08.jpg]]></asset>
+		<asset type="Texture" loadType="Preload" key="img09"><![CDATA[Images/09.jpg]]></asset>
+		<asset type="Texture" loadType="Preload" key="img10"><![CDATA[Images/10.jpg]]></asset>
+		<asset type="Texture" loadType="Preload" key="img11"><![CDATA[Images/12.jpg]]></asset>
+		<asset type="Texture" loadType="Preload" key="img12"><![CDATA[Images/12.jpg]]></asset>
+		<asset type="Texture" loadType="Preload" key="img13"><![CDATA[Images/13.png]]></asset>
+		<asset type="Texture" loadType="Preload" key="img14"><![CDATA[Images/14.jpg]]></asset>
+		<asset type="Texture" loadType="Preload" key="img15"><![CDATA[Images/15.jpg]]></asset>
+		<asset type="Texture" loadType="Preload" key="img16"><![CDATA[Images/16.jpg]]></asset>
+		<asset type="Texture" loadType="Preload" key="img17"><![CDATA[Images/17.jpg]]></asset>
+		<asset type="Texture" loadType="Preload" key="img18"><![CDATA[Images/18.jpg]]></asset>
+		<asset type="Texture" loadType="Preload" key="img19"><![CDATA[Images/19.jpg]]></asset>
+		<asset type="Texture" loadType="Preload" key="img20"><![CDATA[Images/20.jpg]]></asset>
+		<asset type="Texture" loadType="Preload" key="img21"><![CDATA[Images/21.jpg]]></asset>
+		<asset type="Texture" loadType="Preload" key="img22"><![CDATA[Images/22.jpg]]></asset>
+		<asset type="Texture" loadType="Preload" key="img23"><![CDATA[Images/23.jpg]]></asset>
+		<asset type="Xml" loadType="Preload" key="xml" class="ExLib.Utils.AssetManager+AssetList, ExcellencyLibrary"><![CDATA[Images/AssetList.xml]]></asset>
+	</assetList>
+</assets>

@@ -1,0 +1,1162 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c63d5f433caaff41847ba79f2bc566b, type: 3}
+  m_Name: WindowsNativeKorean
+  m_EditorClassIdentifier: 
+  _formulaScript: {fileID: 11500000, guid: 8d0049d61e2e80847b77eaada54d8b53, type: 3}
+  _languageName: WindowsNativeKorean
+  _formulaClassName: WindowsNativeHangulFormula
+  _keyValueType: 1
+  _data:
+  - _name: Key_0
+    _edit: 1
+    _use: 1
+    _hasAllowKey: 1
+    _keyType: 1
+    _keyAction: 0
+    _labelType: 0
+    _valueType: 1
+    _keyByte: 49
+    _keyByteOpt1: 0
+    _keyByteOpt2: 0
+    _keyByteOpt3: 0
+    _keyShiftByte: 49
+    _keyShiftByteOpt1: 0
+    _keyShiftByteOpt2: 0
+    _keyShiftByteOpt3: 0
+    _nor: 1
+    _shift: 1
+    _norTex: {fileID: 0}
+    _shiftTex: {fileID: 0}
+    _norColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+    _shiftColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+  - _name: Key_1
+    _edit: 0
+    _use: 1
+    _hasAllowKey: 1
+    _keyType: 1
+    _keyAction: 0
+    _labelType: 0
+    _valueType: 1
+    _keyByte: 50
+    _keyByteOpt1: 0
+    _keyByteOpt2: 0
+    _keyByteOpt3: 0
+    _keyShiftByte: 50
+    _keyShiftByteOpt1: 0
+    _keyShiftByteOpt2: 0
+    _keyShiftByteOpt3: 0
+    _nor: 2
+    _shift: 2
+    _norTex: {fileID: 0}
+    _shiftTex: {fileID: 0}
+    _norColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+    _shiftColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+  - _name: Key_2
+    _edit: 0
+    _use: 1
+    _hasAllowKey: 1
+    _keyType: 1
+    _keyAction: 0
+    _labelType: 0
+    _valueType: 1
+    _keyByte: 51
+    _keyByteOpt1: 0
+    _keyByteOpt2: 0
+    _keyByteOpt3: 0
+    _keyShiftByte: 51
+    _keyShiftByteOpt1: 0
+    _keyShiftByteOpt2: 0
+    _keyShiftByteOpt3: 0
+    _nor: 3
+    _shift: 3
+    _norTex: {fileID: 0}
+    _shiftTex: {fileID: 0}
+    _norColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+    _shiftColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+  - _name: Key_3
+    _edit: 0
+    _use: 1
+    _hasAllowKey: 1
+    _keyType: 1
+    _keyAction: 0
+    _labelType: 0
+    _valueType: 1
+    _keyByte: 52
+    _keyByteOpt1: 0
+    _keyByteOpt2: 0
+    _keyByteOpt3: 0
+    _keyShiftByte: 52
+    _keyShiftByteOpt1: 0
+    _keyShiftByteOpt2: 0
+    _keyShiftByteOpt3: 0
+    _nor: 4
+    _shift: 4
+    _norTex: {fileID: 0}
+    _shiftTex: {fileID: 0}
+    _norColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+    _shiftColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+  - _name: Key_4
+    _edit: 0
+    _use: 1
+    _hasAllowKey: 1
+    _keyType: 1
+    _keyAction: 0
+    _labelType: 0
+    _valueType: 1
+    _keyByte: 53
+    _keyByteOpt1: 0
+    _keyByteOpt2: 0
+    _keyByteOpt3: 0
+    _keyShiftByte: 53
+    _keyShiftByteOpt1: 0
+    _keyShiftByteOpt2: 0
+    _keyShiftByteOpt3: 0
+    _nor: 5
+    _shift: 5
+    _norTex: {fileID: 0}
+    _shiftTex: {fileID: 0}
+    _norColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+    _shiftColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+  - _name: Key_5
+    _edit: 0
+    _use: 1
+    _hasAllowKey: 1
+    _keyType: 1
+    _keyAction: 0
+    _labelType: 0
+    _valueType: 1
+    _keyByte: 54
+    _keyByteOpt1: 0
+    _keyByteOpt2: 0
+    _keyByteOpt3: 0
+    _keyShiftByte: 54
+    _keyShiftByteOpt1: 0
+    _keyShiftByteOpt2: 0
+    _keyShiftByteOpt3: 0
+    _nor: 6
+    _shift: 6
+    _norTex: {fileID: 0}
+    _shiftTex: {fileID: 0}
+    _norColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+    _shiftColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+  - _name: Key_6
+    _edit: 0
+    _use: 1
+    _hasAllowKey: 1
+    _keyType: 1
+    _keyAction: 0
+    _labelType: 0
+    _valueType: 1
+    _keyByte: 55
+    _keyByteOpt1: 0
+    _keyByteOpt2: 0
+    _keyByteOpt3: 0
+    _keyShiftByte: 55
+    _keyShiftByteOpt1: 0
+    _keyShiftByteOpt2: 0
+    _keyShiftByteOpt3: 0
+    _nor: 7
+    _shift: 7
+    _norTex: {fileID: 0}
+    _shiftTex: {fileID: 0}
+    _norColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+    _shiftColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+  - _name: Key_7
+    _edit: 0
+    _use: 1
+    _hasAllowKey: 1
+    _keyType: 1
+    _keyAction: 0
+    _labelType: 0
+    _valueType: 1
+    _keyByte: 56
+    _keyByteOpt1: 0
+    _keyByteOpt2: 0
+    _keyByteOpt3: 0
+    _keyShiftByte: 56
+    _keyShiftByteOpt1: 0
+    _keyShiftByteOpt2: 0
+    _keyShiftByteOpt3: 0
+    _nor: 8
+    _shift: 8
+    _norTex: {fileID: 0}
+    _shiftTex: {fileID: 0}
+    _norColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+    _shiftColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+  - _name: Key_8
+    _edit: 0
+    _use: 1
+    _hasAllowKey: 1
+    _keyType: 1
+    _keyAction: 0
+    _labelType: 0
+    _valueType: 1
+    _keyByte: 57
+    _keyByteOpt1: 0
+    _keyByteOpt2: 0
+    _keyByteOpt3: 0
+    _keyShiftByte: 57
+    _keyShiftByteOpt1: 0
+    _keyShiftByteOpt2: 0
+    _keyShiftByteOpt3: 0
+    _nor: 9
+    _shift: 9
+    _norTex: {fileID: 0}
+    _shiftTex: {fileID: 0}
+    _norColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+    _shiftColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+  - _name: Key_9
+    _edit: 0
+    _use: 1
+    _hasAllowKey: 1
+    _keyType: 1
+    _keyAction: 0
+    _labelType: 0
+    _valueType: 1
+    _keyByte: 48
+    _keyByteOpt1: 0
+    _keyByteOpt2: 0
+    _keyByteOpt3: 0
+    _keyShiftByte: 48
+    _keyShiftByteOpt1: 0
+    _keyShiftByteOpt2: 0
+    _keyShiftByteOpt3: 0
+    _nor: 0
+    _shift: 0
+    _norTex: {fileID: 0}
+    _shiftTex: {fileID: 0}
+    _norColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+    _shiftColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+  - _name: Key_10
+    _edit: 0
+    _use: 1
+    _hasAllowKey: 1
+    _keyType: 1
+    _keyAction: 0
+    _labelType: 0
+    _valueType: 1
+    _keyByte: 81
+    _keyByteOpt1: 0
+    _keyByteOpt2: 0
+    _keyByteOpt3: 0
+    _keyShiftByte: 81
+    _keyShiftByteOpt1: 0
+    _keyShiftByteOpt2: 0
+    _keyShiftByteOpt3: 0
+    _nor: "\u3142"
+    _shift: "\u3143"
+    _norTex: {fileID: 0}
+    _shiftTex: {fileID: 0}
+    _norColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+    _shiftColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+  - _name: Key_11
+    _edit: 0
+    _use: 1
+    _hasAllowKey: 1
+    _keyType: 1
+    _keyAction: 0
+    _labelType: 0
+    _valueType: 1
+    _keyByte: 87
+    _keyByteOpt1: 0
+    _keyByteOpt2: 0
+    _keyByteOpt3: 0
+    _keyShiftByte: 87
+    _keyShiftByteOpt1: 0
+    _keyShiftByteOpt2: 0
+    _keyShiftByteOpt3: 0
+    _nor: "\u3148"
+    _shift: "\u3149"
+    _norTex: {fileID: 0}
+    _shiftTex: {fileID: 0}
+    _norColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+    _shiftColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+  - _name: Key_12
+    _edit: 0
+    _use: 1
+    _hasAllowKey: 1
+    _keyType: 1
+    _keyAction: 0
+    _labelType: 0
+    _valueType: 1
+    _keyByte: 69
+    _keyByteOpt1: 0
+    _keyByteOpt2: 0
+    _keyByteOpt3: 0
+    _keyShiftByte: 69
+    _keyShiftByteOpt1: 0
+    _keyShiftByteOpt2: 0
+    _keyShiftByteOpt3: 0
+    _nor: "\u3137"
+    _shift: "\u3138"
+    _norTex: {fileID: 0}
+    _shiftTex: {fileID: 0}
+    _norColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+    _shiftColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+  - _name: Key_13
+    _edit: 0
+    _use: 1
+    _hasAllowKey: 1
+    _keyType: 1
+    _keyAction: 0
+    _labelType: 0
+    _valueType: 1
+    _keyByte: 82
+    _keyByteOpt1: 0
+    _keyByteOpt2: 0
+    _keyByteOpt3: 0
+    _keyShiftByte: 82
+    _keyShiftByteOpt1: 0
+    _keyShiftByteOpt2: 0
+    _keyShiftByteOpt3: 0
+    _nor: "\u3131"
+    _shift: "\u3132"
+    _norTex: {fileID: 0}
+    _shiftTex: {fileID: 0}
+    _norColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+    _shiftColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+  - _name: Key_14
+    _edit: 0
+    _use: 1
+    _hasAllowKey: 1
+    _keyType: 1
+    _keyAction: 0
+    _labelType: 0
+    _valueType: 1
+    _keyByte: 84
+    _keyByteOpt1: 0
+    _keyByteOpt2: 0
+    _keyByteOpt3: 0
+    _keyShiftByte: 84
+    _keyShiftByteOpt1: 0
+    _keyShiftByteOpt2: 0
+    _keyShiftByteOpt3: 0
+    _nor: "\u3145"
+    _shift: "\u3146"
+    _norTex: {fileID: 0}
+    _shiftTex: {fileID: 0}
+    _norColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+    _shiftColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+  - _name: Key_15
+    _edit: 0
+    _use: 1
+    _hasAllowKey: 1
+    _keyType: 1
+    _keyAction: 0
+    _labelType: 0
+    _valueType: 1
+    _keyByte: 89
+    _keyByteOpt1: 0
+    _keyByteOpt2: 0
+    _keyByteOpt3: 0
+    _keyShiftByte: 89
+    _keyShiftByteOpt1: 0
+    _keyShiftByteOpt2: 0
+    _keyShiftByteOpt3: 0
+    _nor: "\u315B"
+    _shift: "\u315B"
+    _norTex: {fileID: 0}
+    _shiftTex: {fileID: 0}
+    _norColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+    _shiftColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+  - _name: Key_16
+    _edit: 0
+    _use: 1
+    _hasAllowKey: 1
+    _keyType: 1
+    _keyAction: 0
+    _labelType: 0
+    _valueType: 1
+    _keyByte: 85
+    _keyByteOpt1: 0
+    _keyByteOpt2: 0
+    _keyByteOpt3: 0
+    _keyShiftByte: 85
+    _keyShiftByteOpt1: 0
+    _keyShiftByteOpt2: 0
+    _keyShiftByteOpt3: 0
+    _nor: "\u3155"
+    _shift: "\u3155"
+    _norTex: {fileID: 0}
+    _shiftTex: {fileID: 0}
+    _norColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+    _shiftColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+  - _name: Key_17
+    _edit: 0
+    _use: 1
+    _hasAllowKey: 1
+    _keyType: 1
+    _keyAction: 0
+    _labelType: 0
+    _valueType: 1
+    _keyByte: 73
+    _keyByteOpt1: 0
+    _keyByteOpt2: 0
+    _keyByteOpt3: 0
+    _keyShiftByte: 73
+    _keyShiftByteOpt1: 0
+    _keyShiftByteOpt2: 0
+    _keyShiftByteOpt3: 0
+    _nor: "\u3151"
+    _shift: "\u3151"
+    _norTex: {fileID: 0}
+    _shiftTex: {fileID: 0}
+    _norColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+    _shiftColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+  - _name: Key_18
+    _edit: 0
+    _use: 1
+    _hasAllowKey: 1
+    _keyType: 1
+    _keyAction: 0
+    _labelType: 0
+    _valueType: 1
+    _keyByte: 79
+    _keyByteOpt1: 0
+    _keyByteOpt2: 0
+    _keyByteOpt3: 0
+    _keyShiftByte: 79
+    _keyShiftByteOpt1: 0
+    _keyShiftByteOpt2: 0
+    _keyShiftByteOpt3: 0
+    _nor: "\u3150"
+    _shift: "\u3152"
+    _norTex: {fileID: 0}
+    _shiftTex: {fileID: 0}
+    _norColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+    _shiftColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+  - _name: Key_19
+    _edit: 0
+    _use: 1
+    _hasAllowKey: 1
+    _keyType: 1
+    _keyAction: 0
+    _labelType: 0
+    _valueType: 1
+    _keyByte: 80
+    _keyByteOpt1: 0
+    _keyByteOpt2: 0
+    _keyByteOpt3: 0
+    _keyShiftByte: 80
+    _keyShiftByteOpt1: 0
+    _keyShiftByteOpt2: 0
+    _keyShiftByteOpt3: 0
+    _nor: "\u3154"
+    _shift: "\u3156"
+    _norTex: {fileID: 0}
+    _shiftTex: {fileID: 0}
+    _norColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+    _shiftColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+  - _name: Key_20
+    _edit: 0
+    _use: 1
+    _hasAllowKey: 1
+    _keyType: 1
+    _keyAction: 0
+    _labelType: 0
+    _valueType: 1
+    _keyByte: 65
+    _keyByteOpt1: 0
+    _keyByteOpt2: 0
+    _keyByteOpt3: 0
+    _keyShiftByte: 65
+    _keyShiftByteOpt1: 0
+    _keyShiftByteOpt2: 0
+    _keyShiftByteOpt3: 0
+    _nor: "\u3141"
+    _shift: "\u3141"
+    _norTex: {fileID: 0}
+    _shiftTex: {fileID: 0}
+    _norColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+    _shiftColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+  - _name: Key_21
+    _edit: 0
+    _use: 1
+    _hasAllowKey: 1
+    _keyType: 1
+    _keyAction: 0
+    _labelType: 0
+    _valueType: 1
+    _keyByte: 83
+    _keyByteOpt1: 0
+    _keyByteOpt2: 0
+    _keyByteOpt3: 0
+    _keyShiftByte: 83
+    _keyShiftByteOpt1: 0
+    _keyShiftByteOpt2: 0
+    _keyShiftByteOpt3: 0
+    _nor: "\u3134"
+    _shift: "\u3134"
+    _norTex: {fileID: 0}
+    _shiftTex: {fileID: 0}
+    _norColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+    _shiftColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+  - _name: Key_22
+    _edit: 0
+    _use: 1
+    _hasAllowKey: 1
+    _keyType: 1
+    _keyAction: 0
+    _labelType: 0
+    _valueType: 1
+    _keyByte: 68
+    _keyByteOpt1: 0
+    _keyByteOpt2: 0
+    _keyByteOpt3: 0
+    _keyShiftByte: 68
+    _keyShiftByteOpt1: 0
+    _keyShiftByteOpt2: 0
+    _keyShiftByteOpt3: 0
+    _nor: "\u3147"
+    _shift: "\u3147"
+    _norTex: {fileID: 0}
+    _shiftTex: {fileID: 0}
+    _norColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+    _shiftColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+  - _name: Key_23
+    _edit: 0
+    _use: 1
+    _hasAllowKey: 1
+    _keyType: 1
+    _keyAction: 0
+    _labelType: 0
+    _valueType: 1
+    _keyByte: 70
+    _keyByteOpt1: 0
+    _keyByteOpt2: 0
+    _keyByteOpt3: 0
+    _keyShiftByte: 70
+    _keyShiftByteOpt1: 0
+    _keyShiftByteOpt2: 0
+    _keyShiftByteOpt3: 0
+    _nor: "\u3139"
+    _shift: "\u3139"
+    _norTex: {fileID: 0}
+    _shiftTex: {fileID: 0}
+    _norColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+    _shiftColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+  - _name: Key_24
+    _edit: 0
+    _use: 1
+    _hasAllowKey: 1
+    _keyType: 1
+    _keyAction: 0
+    _labelType: 0
+    _valueType: 1
+    _keyByte: 71
+    _keyByteOpt1: 0
+    _keyByteOpt2: 0
+    _keyByteOpt3: 0
+    _keyShiftByte: 71
+    _keyShiftByteOpt1: 0
+    _keyShiftByteOpt2: 0
+    _keyShiftByteOpt3: 0
+    _nor: "\u314E"
+    _shift: "\u314E"
+    _norTex: {fileID: 0}
+    _shiftTex: {fileID: 0}
+    _norColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+    _shiftColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+  - _name: Key_25
+    _edit: 0
+    _use: 1
+    _hasAllowKey: 1
+    _keyType: 1
+    _keyAction: 0
+    _labelType: 0
+    _valueType: 1
+    _keyByte: 72
+    _keyByteOpt1: 0
+    _keyByteOpt2: 0
+    _keyByteOpt3: 0
+    _keyShiftByte: 72
+    _keyShiftByteOpt1: 0
+    _keyShiftByteOpt2: 0
+    _keyShiftByteOpt3: 0
+    _nor: "\u3157"
+    _shift: "\u3157"
+    _norTex: {fileID: 0}
+    _shiftTex: {fileID: 0}
+    _norColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+    _shiftColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+  - _name: Key_26
+    _edit: 0
+    _use: 1
+    _hasAllowKey: 1
+    _keyType: 1
+    _keyAction: 0
+    _labelType: 0
+    _valueType: 1
+    _keyByte: 74
+    _keyByteOpt1: 0
+    _keyByteOpt2: 0
+    _keyByteOpt3: 0
+    _keyShiftByte: 74
+    _keyShiftByteOpt1: 0
+    _keyShiftByteOpt2: 0
+    _keyShiftByteOpt3: 0
+    _nor: "\u3153"
+    _shift: "\u3153"
+    _norTex: {fileID: 0}
+    _shiftTex: {fileID: 0}
+    _norColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+    _shiftColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+  - _name: Key_27
+    _edit: 0
+    _use: 1
+    _hasAllowKey: 1
+    _keyType: 1
+    _keyAction: 0
+    _labelType: 0
+    _valueType: 1
+    _keyByte: 75
+    _keyByteOpt1: 0
+    _keyByteOpt2: 0
+    _keyByteOpt3: 0
+    _keyShiftByte: 75
+    _keyShiftByteOpt1: 0
+    _keyShiftByteOpt2: 0
+    _keyShiftByteOpt3: 0
+    _nor: "\u314F"
+    _shift: "\u314F"
+    _norTex: {fileID: 0}
+    _shiftTex: {fileID: 0}
+    _norColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+    _shiftColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+  - _name: Key_28
+    _edit: 0
+    _use: 1
+    _hasAllowKey: 1
+    _keyType: 1
+    _keyAction: 0
+    _labelType: 0
+    _valueType: 1
+    _keyByte: 76
+    _keyByteOpt1: 0
+    _keyByteOpt2: 0
+    _keyByteOpt3: 0
+    _keyShiftByte: 76
+    _keyShiftByteOpt1: 0
+    _keyShiftByteOpt2: 0
+    _keyShiftByteOpt3: 0
+    _nor: "\u3163"
+    _shift: "\u3163"
+    _norTex: {fileID: 0}
+    _shiftTex: {fileID: 0}
+    _norColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+    _shiftColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+  - _name: Key_29
+    _edit: 0
+    _use: 1
+    _hasAllowKey: 1
+    _keyType: 3
+    _keyAction: 2
+    _labelType: 0
+    _valueType: 1
+    _keyByte: 16
+    _keyByteOpt1: 0
+    _keyByteOpt2: 0
+    _keyByteOpt3: 0
+    _keyShiftByte: 16
+    _keyShiftByteOpt1: 0
+    _keyShiftByteOpt2: 0
+    _keyShiftByteOpt3: 0
+    _nor: SHIFT
+    _shift: SHIFT
+    _norTex: {fileID: 2800000, guid: 0d6e8e1fa004cf147a650385f6c6bc10, type: 3}
+    _shiftTex: {fileID: 2800000, guid: 0d6e8e1fa004cf147a650385f6c6bc10, type: 3}
+    _norColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+    _shiftColor:
+      Color: {r: 0.259, g: 0.4787448, b: 1, a: 1}
+      Able: 0
+  - _name: Key_30
+    _edit: 0
+    _use: 1
+    _hasAllowKey: 1
+    _keyType: 1
+    _keyAction: 0
+    _labelType: 0
+    _valueType: 1
+    _keyByte: 90
+    _keyByteOpt1: 0
+    _keyByteOpt2: 0
+    _keyByteOpt3: 0
+    _keyShiftByte: 90
+    _keyShiftByteOpt1: 0
+    _keyShiftByteOpt2: 0
+    _keyShiftByteOpt3: 0
+    _nor: "\u314B"
+    _shift: "\u314B"
+    _norTex: {fileID: 0}
+    _shiftTex: {fileID: 0}
+    _norColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+    _shiftColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+  - _name: Key_31
+    _edit: 0
+    _use: 1
+    _hasAllowKey: 1
+    _keyType: 1
+    _keyAction: 0
+    _labelType: 0
+    _valueType: 1
+    _keyByte: 88
+    _keyByteOpt1: 0
+    _keyByteOpt2: 0
+    _keyByteOpt3: 0
+    _keyShiftByte: 88
+    _keyShiftByteOpt1: 0
+    _keyShiftByteOpt2: 0
+    _keyShiftByteOpt3: 0
+    _nor: "\u314C"
+    _shift: "\u314C"
+    _norTex: {fileID: 0}
+    _shiftTex: {fileID: 0}
+    _norColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+    _shiftColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+  - _name: Key_32
+    _edit: 0
+    _use: 1
+    _hasAllowKey: 1
+    _keyType: 1
+    _keyAction: 0
+    _labelType: 0
+    _valueType: 1
+    _keyByte: 67
+    _keyByteOpt1: 0
+    _keyByteOpt2: 0
+    _keyByteOpt3: 0
+    _keyShiftByte: 67
+    _keyShiftByteOpt1: 0
+    _keyShiftByteOpt2: 0
+    _keyShiftByteOpt3: 0
+    _nor: "\u314A"
+    _shift: "\u314A"
+    _norTex: {fileID: 0}
+    _shiftTex: {fileID: 0}
+    _norColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+    _shiftColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+  - _name: Key_33
+    _edit: 0
+    _use: 1
+    _hasAllowKey: 1
+    _keyType: 1
+    _keyAction: 0
+    _labelType: 0
+    _valueType: 1
+    _keyByte: 86
+    _keyByteOpt1: 0
+    _keyByteOpt2: 0
+    _keyByteOpt3: 0
+    _keyShiftByte: 86
+    _keyShiftByteOpt1: 0
+    _keyShiftByteOpt2: 0
+    _keyShiftByteOpt3: 0
+    _nor: "\u314D"
+    _shift: "\u314D"
+    _norTex: {fileID: 0}
+    _shiftTex: {fileID: 0}
+    _norColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+    _shiftColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+  - _name: Key_34
+    _edit: 0
+    _use: 1
+    _hasAllowKey: 1
+    _keyType: 1
+    _keyAction: 0
+    _labelType: 0
+    _valueType: 1
+    _keyByte: 66
+    _keyByteOpt1: 0
+    _keyByteOpt2: 0
+    _keyByteOpt3: 0
+    _keyShiftByte: 66
+    _keyShiftByteOpt1: 0
+    _keyShiftByteOpt2: 0
+    _keyShiftByteOpt3: 0
+    _nor: "\u3160"
+    _shift: "\u3160"
+    _norTex: {fileID: 0}
+    _shiftTex: {fileID: 0}
+    _norColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+    _shiftColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+  - _name: Key_35
+    _edit: 0
+    _use: 1
+    _hasAllowKey: 1
+    _keyType: 1
+    _keyAction: 0
+    _labelType: 0
+    _valueType: 1
+    _keyByte: 78
+    _keyByteOpt1: 0
+    _keyByteOpt2: 0
+    _keyByteOpt3: 0
+    _keyShiftByte: 78
+    _keyShiftByteOpt1: 0
+    _keyShiftByteOpt2: 0
+    _keyShiftByteOpt3: 0
+    _nor: "\u315C"
+    _shift: "\u315C"
+    _norTex: {fileID: 0}
+    _shiftTex: {fileID: 0}
+    _norColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+    _shiftColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+  - _name: Key_36
+    _edit: 0
+    _use: 1
+    _hasAllowKey: 1
+    _keyType: 1
+    _keyAction: 0
+    _labelType: 0
+    _valueType: 1
+    _keyByte: 77
+    _keyByteOpt1: 0
+    _keyByteOpt2: 0
+    _keyByteOpt3: 0
+    _keyShiftByte: 77
+    _keyShiftByteOpt1: 0
+    _keyShiftByteOpt2: 0
+    _keyShiftByteOpt3: 0
+    _nor: "\u3161"
+    _shift: "\u3161"
+    _norTex: {fileID: 0}
+    _shiftTex: {fileID: 0}
+    _norColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+    _shiftColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+  - _name: Key_37
+    _edit: 0
+    _use: 1
+    _hasAllowKey: 1
+    _keyType: 3
+    _keyAction: 3
+    _labelType: 0
+    _valueType: 1
+    _keyByte: 8
+    _keyByteOpt1: 0
+    _keyByteOpt2: 0
+    _keyByteOpt3: 0
+    _keyShiftByte: 8
+    _keyShiftByteOpt1: 0
+    _keyShiftByteOpt2: 0
+    _keyShiftByteOpt3: 0
+    _nor: "\uC0AD\uC81C"
+    _shift: "\uC0AD\uC81C"
+    _norTex: {fileID: 2800000, guid: 7315dede0e37b8446bb8ea05e0358fb6, type: 3}
+    _shiftTex: {fileID: 2800000, guid: 7315dede0e37b8446bb8ea05e0358fb6, type: 3}
+    _norColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+    _shiftColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+  - _name: Key_38
+    _edit: 0
+    _use: 1
+    _hasAllowKey: 1
+    _keyType: 3
+    _keyAction: 1
+    _labelType: 0
+    _valueType: 1
+    _keyByte: 21
+    _keyByteOpt1: 0
+    _keyByteOpt2: 0
+    _keyByteOpt3: 0
+    _keyShiftByte: 21
+    _keyShiftByteOpt1: 0
+    _keyShiftByteOpt2: 0
+    _keyShiftByteOpt3: 0
+    _nor: "\uD55C/\uC601"
+    _shift: "\uD55C/\uC601"
+    _norTex: {fileID: 0}
+    _shiftTex: {fileID: 0}
+    _norColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+    _shiftColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+  - _name: Key_39
+    _edit: 0
+    _use: 1
+    _hasAllowKey: 1
+    _keyType: 1
+    _keyAction: 0
+    _labelType: 0
+    _valueType: 1
+    _keyByte: 190
+    _keyByteOpt1: 0
+    _keyByteOpt2: 0
+    _keyByteOpt3: 0
+    _keyShiftByte: 190
+    _keyShiftByteOpt1: 0
+    _keyShiftByteOpt2: 0
+    _keyShiftByteOpt3: 0
+    _nor: .
+    _shift: ','
+    _norTex: {fileID: 0}
+    _shiftTex: {fileID: 0}
+    _norColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+    _shiftColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+  - _name: Key_40
+    _edit: 0
+    _use: 1
+    _hasAllowKey: 1
+    _keyType: 1
+    _keyAction: 0
+    _labelType: 0
+    _valueType: 1
+    _keyByte: 50
+    _keyByteOpt1: 160
+    _keyByteOpt2: 0
+    _keyByteOpt3: 0
+    _keyShiftByte: 50
+    _keyShiftByteOpt1: 160
+    _keyShiftByteOpt2: 0
+    _keyShiftByteOpt3: 0
+    _nor: '@'
+    _shift: '@'
+    _norTex: {fileID: 0}
+    _shiftTex: {fileID: 0}
+    _norColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+    _shiftColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+  - _name: Key_41
+    _edit: 0
+    _use: 1
+    _hasAllowKey: 1
+    _keyType: 3
+    _keyAction: 4
+    _labelType: 0
+    _valueType: 1
+    _keyByte: 32
+    _keyByteOpt1: 0
+    _keyByteOpt2: 0
+    _keyByteOpt3: 0
+    _keyShiftByte: 32
+    _keyShiftByteOpt1: 0
+    _keyShiftByteOpt2: 0
+    _keyShiftByteOpt3: 0
+    _nor: "\uB744\uC5B4\uC4F0\uAE30"
+    _shift: "\uB744\uC5B4\uC4F0\uAE30"
+    _norTex: {fileID: 0}
+    _shiftTex: {fileID: 0}
+    _norColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+    _shiftColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+  - _name: Key_42
+    _edit: 0
+    _use: 1
+    _hasAllowKey: 1
+    _keyType: 1
+    _keyAction: 0
+    _labelType: 0
+    _valueType: 1
+    _keyByte: 189
+    _keyByteOpt1: 0
+    _keyByteOpt2: 0
+    _keyByteOpt3: 0
+    _keyShiftByte: 189
+    _keyShiftByteOpt1: 0
+    _keyShiftByteOpt2: 0
+    _keyShiftByteOpt3: 0
+    _nor: '-'
+    _shift: _
+    _norTex: {fileID: 0}
+    _shiftTex: {fileID: 0}
+    _norColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+    _shiftColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+  - _name: Key_43
+    _edit: 0
+    _use: 1
+    _hasAllowKey: 1
+    _keyType: 1
+    _keyAction: 0
+    _labelType: 0
+    _valueType: 1
+    _keyByte: 13
+    _keyByteOpt1: 0
+    _keyByteOpt2: 0
+    _keyByteOpt3: 0
+    _keyShiftByte: 13
+    _keyShiftByteOpt1: 0
+    _keyShiftByteOpt2: 0
+    _keyShiftByteOpt3: 0
+    _nor: ENTER
+    _shift: ENTER
+    _norTex: {fileID: 0}
+    _shiftTex: {fileID: 0}
+    _norColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0
+    _shiftColor:
+      Color: {r: 0, g: 0, b: 0, a: 0}
+      Able: 0

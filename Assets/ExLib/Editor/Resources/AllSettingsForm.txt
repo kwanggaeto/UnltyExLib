@@ -1,0 +1,13 @@
+<usings>
+
+namespace Settings
+{
+    public static class AllSettings
+    {
+<props>
+    	
+        static AllSettings()
+        {
+        }
+    }
+}

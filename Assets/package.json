@@ -1,0 +1,13 @@
+{
+    "dependencies": {}, 
+    "description": "The Library of The Excellency (Me)", 
+    "displayName": "The Library of The Excellency", 
+    "name": "com.excellency.library", 
+    "repository": {
+        "revision": "", 
+        "type": "", 
+        "url": ""
+    }, 
+    "unity": "2018.1", 
+    "version": "1.0"
+}
