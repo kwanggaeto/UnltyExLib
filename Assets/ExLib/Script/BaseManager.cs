@@ -467,7 +467,7 @@ namespace ExLib
         private void BaseSetup()
         {
 #if UNITY_STANDALONE
-#if !UNITY_EDITOR
+#if UNITY_EDITOR
             Cursor.visible = true;
 #else
             Cursor.visible = Settings.BasicSettings.Value.ShowMouse == 0;
