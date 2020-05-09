@@ -31,6 +31,8 @@ namespace ExLib
         
         public bool EnableDisallowObject = false;
 
+        public bool UseUIWorks = false;
+
         public bool EnableUNET = false;
 
 #if UNITY_STANDALONE_WIN && UNITY_EDITOR_WIN

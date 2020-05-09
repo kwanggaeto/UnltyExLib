@@ -26,9 +26,9 @@ namespace ExLib.UIWorks
         [SerializeField]
         protected float _hideBlendTime = -1;
 
-        protected Dictionary<RectTransform, TransformInfo> _initTransform = new Dictionary<RectTransform, TransformInfo>();
+        private Dictionary<RectTransform, TransformInfo> _initTransform = new Dictionary<RectTransform, TransformInfo>();
 
-        protected CanvasGroup _canvasGroup;
+        private CanvasGroup _canvasGroup;
 
         private TweenCallback _showCallback;
         public event TweenCallback ShowCallback
@@ -228,6 +228,8 @@ namespace ExLib.UIWorks
             Sequence sq = DOTween.Sequence();
             _Hide(sq);
 
+            sq.onComplete += () => gameObject.SetActive(false);
+
             float d = sq.Duration(false);
             float nd = d - _hideBlendTime;
             if (nd >= d)
@@ -239,7 +241,6 @@ namespace ExLib.UIWorks
                 sq.InsertCallback(nd, ExecuteHideCallback);
             }
 
-            sq.onComplete += () => gameObject.SetActive(false);
         }
 
         public virtual void Revert()

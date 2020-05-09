@@ -6,6 +6,7 @@ using System.Xml.Serialization;
 using System;
 using System.Xml;
 using System.Runtime.CompilerServices;
+using System.Xml.Schema;
 
 [assembly: InternalsVisibleTo("ExcellencyLibrary")]
 
@@ -25,6 +26,72 @@ namespace Settings
         }
 
         protected virtual void SetDefaultValue() { }
+    }
+
+    [System.Serializable]
+    public struct ShowCursorType : IXmlSerializable
+    {
+        private float _value;
+
+        public XmlSchema GetSchema()
+        {
+            return null;
+        }
+
+        public void ReadXml(XmlReader reader)
+        {
+            var value = reader.ReadString();
+            float v;
+            bool b;
+            if (float.TryParse(value, out v))
+            {
+                _value = v;
+            }
+            else if(bool.TryParse(value, out b))
+            {
+                _value = b ? 0 : -1;
+            }
+            else
+            {
+                _value = -1;
+            }
+        }
+
+        public void WriteXml(XmlWriter writer)
+        {
+            if (_value == 0)
+            {
+                writer.WriteString("true");
+            }
+            else if (_value < 0)
+            {
+                writer.WriteString("false");
+            }
+            else
+            {
+                writer.WriteString(_value.ToString());
+            }
+        }
+
+        public static implicit operator ShowCursorType(float value)
+        {
+            return new ShowCursorType { _value = value };
+        }
+
+        public static implicit operator ShowCursorType(bool value)
+        {
+            return new ShowCursorType { _value = value?0:-1 };
+        }
+
+        public static implicit operator float(ShowCursorType value)
+        {
+            return value._value;
+        }
+
+        public static implicit operator bool(ShowCursorType value)
+        {
+            return value._value==0;
+        }
     }
 
     [Serializable]
@@ -73,9 +140,9 @@ namespace Settings
         public int TargetFramerate { get; set; }
 
 #if UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN
-        [ExLib.SettingsUI.Attributes.ToggleField(DefaultValue = true)]
-        [XmlElement("showMouse", typeof(bool))]
-        public bool ShowMouse { get; set; }
+        [ExLib.SettingsUI.Attributes.FloatField(DefaultValue = 0)]
+        [XmlElement("showMouse", typeof(ShowCursorType))]
+        public ShowCursorType ShowMouse { get; set; }
 
         [ExLib.SettingsUI.Attributes.Vector2Field]
         [XmlElement("resolution", typeof(Vector2Int))]

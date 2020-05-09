@@ -11,6 +11,7 @@ using ExLib.Native.WindowsAPI;
 
 using Settings;
 using System.Linq;
+using ExLib.UI.CoroutineTween;
 
 namespace ExLib
 {
@@ -141,17 +142,38 @@ namespace ExLib
 #if UNITY_STANDALONE
         private IEnumerator UpdateRoutine()
         {
-            while(true)
+            while(BasicSettings.Value.ShowMouse < 0)
             {
-                if (!BasicSettings.Value.ShowMouse)
+                if ((Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl)) && Input.GetKeyDown(KeyCode.M))
                 {
-                    if ((Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl)) && Input.GetKeyDown(KeyCode.M))
-                    {
-                        Cursor.visible = !Cursor.visible;
-                    }
+                    Cursor.visible = !Cursor.visible;
                 }
                 yield return null;
             }
+
+            while(BasicSettings.Value.ShowMouse > 0)
+            {
+                var prevmp = Input.mousePosition;
+                yield return null;
+                var mp = Input.mousePosition;
+
+                var diff = mp - prevmp;
+
+                float diffValue = Cursor.visible ? 10 : 50;
+                if (diff.sqrMagnitude > diffValue)
+                {
+                    Cursor.visible = true;
+                    StopCoroutine("DelayedHideCursorRoutine");
+                    StartCoroutine("DelayedHideCursorRoutine");
+                }
+            }
+        }
+
+        private IEnumerator DelayedHideCursorRoutine()
+        {
+            yield return new WaitForSeconds((float)BasicSettings.Value.ShowMouse);
+
+            Cursor.visible = false;
         }
 #endif
 
@@ -445,10 +467,10 @@ namespace ExLib
         private void BaseSetup()
         {
 #if UNITY_STANDALONE
-#if UNITY_EDITOR
+#if !UNITY_EDITOR
             Cursor.visible = true;
 #else
-            Cursor.visible = Settings.BasicSettings.Value.ShowMouse;
+            Cursor.visible = Settings.BasicSettings.Value.ShowMouse == 0;
 #endif
 #endif
             BaseManager.Instance.standbyTime = Settings.BasicSettings.Value.StandbyTime;
@@ -459,7 +481,7 @@ namespace ExLib
                 SettingsUI.SettingsUI.Instance.RegisterValueChangedListener(
                     typeof(Settings.BasicSettings),
                     () => Settings.BasicSettings.Value.ShowMouse,
-                    (k, v) => { Cursor.visible = v; });
+                    (k, v) => { Cursor.visible = v == 0; });
 #endif
                 SettingsUI.SettingsUI.Instance.RegisterValueChangedListener(
                     typeof(Settings.BasicSettings),

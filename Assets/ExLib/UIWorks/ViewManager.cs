@@ -11,7 +11,6 @@ using UnityEngine.UI;
 
 namespace ExLib.UIWorks
 {
-    [RequireComponent(typeof(ViewTypeGenerator))]
     public abstract class ViewManager<T> : ExLib.Singleton<T> where T : ViewManager<T>
     {
         public interface IBackHandlers
@@ -84,9 +83,9 @@ namespace ExLib.UIWorks
             base.Awake();
         }
 
-        public void StartView()
+        public virtual void StartView()
         {
-            SetView(_startView);
+            ChangeView(_startView);
         }
 
         public View GetView(ViewType view)
@@ -100,7 +99,7 @@ namespace ExLib.UIWorks
             return null;
         }
 
-        public virtual void SetView<T>(T data, ViewType view)
+        public virtual void ChangeView<DataType>(DataType data, ViewType view)
         {
             View newView = GetView(view);
             if (newView == null)
@@ -115,22 +114,28 @@ namespace ExLib.UIWorks
                 method.Invoke(newView, new object[] { data });
             }
 
-            SetView(newView);
+            ChangeView(newView, false);
         }
 
-        public virtual void SetView(ViewType view)
+        public virtual void ChangeView(ViewType view)
         {
             View newView = GetView(view);
-            SetView(newView);
+            ChangeView(newView, false);
         }
 
-        public virtual void SetView(View view)
+        public virtual void ForcedChangeView(ViewType view)
+        {
+            View newView = GetView(view);
+            ChangeView(newView, true);
+        }
+
+        public virtual void ChangeView(View view, bool forced)
         {
             View newView = view;
             if (newView == null)
                 return;
 
-            if (_currentView != null && _currentViewType == view.ViewType)
+            if (_currentView != null && _currentViewType == view.ViewType && !forced)
                 return;
 
             _PreSetView(newView);

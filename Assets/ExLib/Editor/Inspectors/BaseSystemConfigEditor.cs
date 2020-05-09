@@ -19,7 +19,7 @@ namespace ExLib.Editor
         private const string HLAPI_NAME = "com.unity.multiplayer-hlapi";
         private bool _scriptsFoldout;
 
-        private string _libPath;
+        private string _libPathValue;
 
         private AnimBool _resolveUNET;
         private AddRequest _addreq;
@@ -27,9 +27,33 @@ namespace ExLib.Editor
         private Rect _scrollRect;
         private GUIStyle _bannerStyle;
         internal bool hasScroll;
+        private SerializedProperty _startAutomatically;
+        private SerializedProperty _enableDisallowObject;
+        private SerializedProperty _enableSceneManager;
+        private SerializedProperty _useUIWorks;
+        private SerializedProperty _internalLogger;
+        private SerializedProperty _settingsUI;
+        private SerializedProperty _includeAssets;
+        private SerializedProperty _scripts;
+        private SerializedProperty _libPath;
 
         private void OnEnable()
         {
+            _startAutomatically = serializedObject.FindProperty("StartAutomatically");
+            _enableDisallowObject = serializedObject.FindProperty("EnableDisallowObject");
+            _enableSceneManager = serializedObject.FindProperty("EnableSceneManager");
+            _useUIWorks = serializedObject.FindProperty("UseUIWorks");
+
+            _internalLogger = serializedObject.FindProperty("InternalLogger");
+            _settingsUI = serializedObject.FindProperty("SettingsUI");
+
+#if UNITY_STANDALONE_WIN && UNITY_EDITOR_WIN
+            _includeAssets = serializedObject.FindProperty("IncludeAssets");
+#endif
+
+            _scripts = serializedObject.FindProperty("SettingsScripts");
+            _libPath = serializedObject.FindProperty("LibraryPath");
+
             try
             {
                 _bannerStyle = new GUIStyle(EditorStyles.inspectorFullWidthMargins);
@@ -41,7 +65,7 @@ namespace ExLib.Editor
             {
 
             }
-            _libPath = ExcellencyLibrary.LibraryPath;
+            _libPathValue = ExcellencyLibrary.LibraryPath;
             _resolveUNET = new AnimBool(false, Repaint);
         }
 
@@ -49,22 +73,8 @@ namespace ExLib.Editor
         {
             //serializedObject.UpdateIfRequiredOrScript();
 
-            SerializedProperty startAutomatically = serializedObject.FindProperty("StartAutomatically");
-            SerializedProperty enableDisallowObject = serializedObject.FindProperty("EnableDisallowObject");
-            SerializedProperty enableSceneManager = serializedObject.FindProperty("EnableSceneManager");
-
-            SerializedProperty internalLogger = serializedObject.FindProperty("InternalLogger");
-            SerializedProperty settingsUI = serializedObject.FindProperty("SettingsUI");
-
-#if UNITY_STANDALONE_WIN && UNITY_EDITOR_WIN
-            SerializedProperty includeAssets = serializedObject.FindProperty("IncludeAssets");
-#endif
-
-            SerializedProperty scripts = serializedObject.FindProperty("SettingsScripts");
-            SerializedProperty libPath = serializedObject.FindProperty("LibraryPath");
-
-            if (!string.IsNullOrEmpty(_libPath))
-                libPath.stringValue = _libPath;
+            if (!string.IsNullOrEmpty(this._libPathValue))
+                _libPath.stringValue = this._libPathValue;
 
             
             Texture banner = Resources.Load<Texture>("Textures/banner");
@@ -85,23 +95,51 @@ namespace ExLib.Editor
             EditorGUI.BeginDisabledGroup(true);
             EditorGUILayout.BeginHorizontal();
             EditorGUILayout.LabelField("Library Path", EditorStyles.wordWrappedMiniLabel, GUILayout.Width(EditorGUIUtility.labelWidth));
-            EditorGUILayout.LabelField(libPath.stringValue, EditorStyles.wordWrappedMiniLabel);
+            EditorGUILayout.LabelField(_libPath.stringValue, EditorStyles.wordWrappedMiniLabel);
             EditorGUILayout.EndHorizontal();
             EditorGUI.EndDisabledGroup();
             EditorGUILayout.Space();
 
             var start = GUILayoutUtility.GetLastRect();
             _scrollPosition = EditorGUILayout.BeginScrollView(_scrollPosition);
-            EditorGUILayout.PropertyField(startAutomatically);
+            EditorGUILayout.PropertyField(_startAutomatically);
 
-            EditorGUILayout.PropertyField(enableDisallowObject);
+            EditorGUILayout.PropertyField(_enableDisallowObject);
+            EditorGUILayout.Space();
+
+            EditorGUI.BeginChangeCheck();
+            EditorGUILayout.PropertyField(_useUIWorks);
+            if (EditorGUI.EndChangeCheck())
+            {
+                var buildTargetGroup = BuildPipeline.GetBuildTargetGroup(EditorUserBuildSettings.activeBuildTarget);
+                var defineSymbols = PlayerSettings.GetScriptingDefineSymbolsForGroup(buildTargetGroup);
+                if (_useUIWorks.boolValue)
+                {
+                    var assemblies = UnityEditor.Compilation.CompilationPipeline.GetAssemblies();
+                    var dotween = assemblies.FirstOrDefault(a => Regex.IsMatch(a.name, "DOTween"));
+                    if (dotween == null)
+                    {
+
+                    }
+
+                    if (!Regex.IsMatch(defineSymbols, "UI_WORKS"))
+                    {
+                        PlayerSettings.SetScriptingDefineSymbolsForGroup(buildTargetGroup, defineSymbols + ";UI_WORKS");
+                    }
+                }
+                else
+                {
+                    var defines = Regex.Replace(defineSymbols, "UI_WORKS", "");
+                    PlayerSettings.SetScriptingDefineSymbolsForGroup(buildTargetGroup, defineSymbols);
+                }
+            }
 
             /*EditorGUILayout.Space();
             DrawEnabledUNET();*/
 
             EditorGUILayout.Space();
-            EditorGUILayout.PropertyField(internalLogger);
-            EditorGUILayout.PropertyField(settingsUI);
+            EditorGUILayout.PropertyField(_internalLogger);
+            EditorGUILayout.PropertyField(_settingsUI);
             //BaseSystemConfig.EnsurePrefabs();
 
             EditorGUILayout.Space();
@@ -111,9 +149,9 @@ namespace ExLib.Editor
             EditorGUI.indentLevel++;
 
             //serializedObject.UpdateIfRequiredOrScript();
-            for (int i = 0; i < scripts.arraySize; i++)
+            for (int i = 0; i < _scripts.arraySize; i++)
             {
-                SerializedProperty scriptElement = scripts.GetArrayElementAtIndex(i);
+                SerializedProperty scriptElement = _scripts.GetArrayElementAtIndex(i);
 
                 SerializedProperty script = scriptElement.FindPropertyRelative("settingsScript");
                 MonoScript scriptObj = script.objectReferenceValue as MonoScript;
@@ -156,7 +194,7 @@ namespace ExLib.Editor
             style.richText = true;
             EditorGUILayout.LabelField("<b>Included Assets</b> <size=8>*just moving assets after building</size>", style);
 
-            int len = includeAssets.arraySize;
+            int len = _includeAssets.arraySize;
 
             float oldLabelWidth = EditorGUIUtility.labelWidth;
             EditorGUIUtility.labelWidth = 50f;
@@ -165,7 +203,7 @@ namespace ExLib.Editor
             {
                 EditorGUILayout.BeginVertical();
                 EditorGUILayout.BeginHorizontal();
-                SerializedProperty path = includeAssets.GetArrayElementAtIndex(i);
+                SerializedProperty path = _includeAssets.GetArrayElementAtIndex(i);
                 SerializedProperty src = path.FindPropertyRelative("sourceFileOrFolder");
                 SerializedProperty dst = path.FindPropertyRelative("destinationFolder");
                 EditorGUIUtility.editingTextField = false;
@@ -205,7 +243,7 @@ namespace ExLib.Editor
                 }
                 if (GUILayout.Button("×", GUILayout.Width(20f)))
                 {
-                    includeAssets.DeleteArrayElementAtIndex(i);
+                    _includeAssets.DeleteArrayElementAtIndex(i);
                     break;
                 }
                 EditorGUILayout.EndHorizontal();
@@ -229,7 +267,7 @@ namespace ExLib.Editor
 
             if (GUILayout.Button("Add"))
             {
-                includeAssets.arraySize++;
+                _includeAssets.arraySize++;
             }
             #endregion
 

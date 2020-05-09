@@ -639,11 +639,12 @@ namespace ExLib.Utils
                     }
                     else
                     {
-                        assetPath = Regex.Replace(asset.File, @"\\", "/");
                         assetPath = Regex.Replace(asset.File, Application.streamingAssetsPath, "");
                     }
 
-                    string[] files = System.IO.Directory.GetFiles(assetPath, "*", SearchOption.TopDirectoryOnly);
+                    assetPath = Regex.Replace(assetPath, @"\\", "/");
+
+                    string[] files = System.IO.Directory.GetFiles(assetPath, "*", SearchOption.AllDirectories);
                     for(int j = 0; j < files.Length; j++)
                     {
                         string path = files[j];
@@ -657,14 +658,17 @@ namespace ExLib.Utils
                         }
                         else
                         {
-                            path = Regex.Replace(files[j], @"\\", "/");
                             path = Regex.Replace(files[j], Application.streamingAssetsPath, "");
                         }
+                        path = Regex.Replace(path, @"\\", "/");
+
+                        var fileKey = Regex.Replace(path, assetPath, "");
+                        fileKey = fileKey.Trim('/');
                         DynamicAsset newAsset = new DynamicAsset
                         {
                             File = path,
                             AssetType = RecognizeAssetType(path),
-                            Key = System.IO.Path.GetFileName(files[j]),
+                            Key = fileKey,
                             LoadType = LoadType.Preload,
                             NoMipMap = true,
                             NonReadable = false
