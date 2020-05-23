@@ -76,6 +76,9 @@ namespace ExLib.Control
         private bool _hasAllowKey = true;
 
         [SerializeField]
+        private bool _disabled;
+
+        [SerializeField]
         private KeyType _keyType;
 
         [SerializeField]
@@ -150,6 +153,8 @@ namespace ExLib.Control
         public KeyAction Action { get { return _keyAction; } }
         public KeyLabelType LabelType { get { return _labelType; } }
         public KeyValueType ValueType { get { return _valueType; } }
+
+        public bool IsEnabled { get { return !_disabled; } }
 
         ~KeyData()
         {

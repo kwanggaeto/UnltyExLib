@@ -51,6 +51,8 @@ namespace ExLib.Control.UIKeyboard
         private GUIContent _typeLabel;
         private Vector2 _useSize;
         private Vector2 _typeSize;
+        private GUIContent _disabledLabel;
+        private Vector2 _disabledSize;
         private Vector2 _actionSize;
         private Vector2 _valueSize;
         private Vector2 _normalLabelSize;
@@ -253,7 +255,7 @@ namespace ExLib.Control.UIKeyboard
             int dataIndex;
             KeyData target = GetTarget(property, out dataIndex);
             bool edit = dataIndex == _editIndex;
-            float height = (EditorGUIUtility.singleLineHeight + GAP_HALF) * (edit ? (valueType.enumValueIndex == 0?8f:8.5f) : 1f) + 3f;
+            float height = (EditorGUIUtility.singleLineHeight + GAP_HALF) * (edit ? (valueType.enumValueIndex == 0?9f:9.5f) : 1f) + 3f;
             float offset = (EditorGUIUtility.singleLineHeight) * ((EditorGUIUtility.wideMode ? 0f : 1f) + (isTextureLabel ? (EditorGUIUtility.wideMode ? 1.5f : 2.5f) : 0f)) + (isTextureLabel ? 15f : 0f);
             return height + (edit ? offset : 0f);
         }
@@ -297,6 +299,7 @@ namespace ExLib.Control.UIKeyboard
             SerializedProperty isUse = property.FindPropertyRelative("_use");
             SerializedProperty labelType = property.FindPropertyRelative("_labelType");
             SerializedProperty valueType = property.FindPropertyRelative("_valueType");
+            SerializedProperty disabled = property.FindPropertyRelative("_disabled");
 
             float startX = 56f;
             pos.y += 2f;
@@ -624,6 +627,11 @@ namespace ExLib.Control.UIKeyboard
                 _typeLabel = new GUIContent("Key Type");
                 _typeSize = _style.CalcSize(_typeLabel);
             }
+            if (_disabledLabel == null)
+            {
+                _disabledLabel = new GUIContent("Disabled");
+                _disabledSize = _style.CalcSize(_disabledLabel);
+            }
             if (_actionLabel == null)
             {
                 _actionLabel = new GUIContent("Key Action");
@@ -639,10 +647,18 @@ namespace ExLib.Control.UIKeyboard
 
             propPerWidth = (fullWidth - (startX - GAP_DOUBLE)) - maxLabelWidth - GAP;
 
+            contentPosition.x = startX;
+            contentPosition.y += contentPosition.height + GAP + GAP_HALF;
+            contentPosition.width = maxLabelWidth;
+            EditorGUI.LabelField(contentPosition, _disabledLabel, _style);
+            contentPosition.x += maxLabelWidth + GAP;
+            contentPosition.width = propPerWidth;
+            EditorGUI.PropertyField(contentPosition, disabled, GUIContent.none);
+
             if (valueType.enumValueIndex == 0)
             {
                 contentPosition.x = startX;
-                contentPosition.y += contentPosition.height + GAP;
+                contentPosition.y += contentPosition.height + GAP_HALF;
                 contentPosition.width = maxLabelWidth;
                 EditorGUI.LabelField(contentPosition, _actionLabel, _style);
                 contentPosition.x += maxLabelWidth + GAP;
@@ -707,7 +723,7 @@ namespace ExLib.Control.UIKeyboard
             else
             {
                 contentPosition.x = startX;
-                contentPosition.y += contentPosition.height + GAP;
+                contentPosition.y += contentPosition.height + GAP_HALF;
                 contentPosition.width = maxLabelWidth;
                 EditorGUI.LabelField(contentPosition, _actionLabel, _style);
                 contentPosition.x += maxLabelWidth + GAP;

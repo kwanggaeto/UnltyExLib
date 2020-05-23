@@ -294,7 +294,7 @@ namespace ExLib.Control.UIKeyboard
 
             bool isTextureLabel = data.LabelType > (int)KeyLabelType.Text;
 
-            float height = (EditorGUIUtility.singleLineHeight + KeyDataDrawer.GAP_HALF) * (data.isEdit ? (data.ValueType == 0 ? 8f : 8.5f) : 1f) + 3f;
+            float height = (EditorGUIUtility.singleLineHeight + KeyDataDrawer.GAP_HALF) * (data.isEdit ? (data.ValueType == 0 ? 9f : 9.5f) : 1f) + 3f;
             float offset = (EditorGUIUtility.singleLineHeight) * ((EditorGUIUtility.wideMode ? 0f : 1f) + (isTextureLabel ? (EditorGUIUtility.wideMode ? 1.5f : 2.5f) : 0f)) + (isTextureLabel ? 15f : 0f);
             return height + (data.isEdit ? offset : 0f);
 

@@ -23,6 +23,8 @@ namespace ExLib.Control.UIKeyboard.UI
             onValueChanged.AddListener(UpdateCaret);
             if (activateOnStart)
                 ActivateInputField();
+
+            MoveTextEnd(false);
         }
 
         protected override void OnDisable()

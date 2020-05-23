@@ -93,7 +93,14 @@ namespace ExLib.Control.UIKeyboard
             get
             {
                 if (_labelObj == null)
+                {
+                    SetState();
+                }
+
+                if (_labelObj == null)
+                {
                     return null;
+                }
 
                 if (_labelSelectable == null)
                     _labelSelectable = _labelObj.GetComponent<Selectable>();
@@ -316,14 +323,22 @@ namespace ExLib.Control.UIKeyboard
             {
                 Text txt = GetTextLabelEnsured();
                 txt.text = Keyboard.Languages.Shift ? _data.ShiftText : _data.NormalText;
-                txt.color = Keyboard.Languages.Shift ? _data.ShiftLabelColor.Able ? _data.ShiftLabelColor.Color : _defaultColor : _defaultColor;
+                if (_data.IsEnabled)
+                    txt.color = Keyboard.Languages.Shift ? _data.ShiftLabelColor.Able ? _data.ShiftLabelColor.Color : _defaultColor : _defaultColor;
+                else
+                    txt.color = Selectable.colors.disabledColor;
+
                 txt.SetAllDirty();
             }
             else
             {
                 RawImage img = GetImageLabelEnsured();
                 img.texture = Keyboard.Languages.Shift ? _data.ShiftLabelImage : _data.NormalLabelImage;
-                img.color = Keyboard.Languages.Shift ? _data.ShiftLabelColor.Able ? _data.ShiftLabelColor.Color : _defaultColor : _defaultColor;
+                if (_data.IsEnabled)
+                    img.color = Keyboard.Languages.Shift ? _data.ShiftLabelColor.Able ? _data.ShiftLabelColor.Color : _defaultColor : _defaultColor;
+                else
+                    img.color = Selectable.colors.disabledColor;
+
                 img.SetAllDirty();
             }
 
@@ -378,21 +393,21 @@ namespace ExLib.Control.UIKeyboard
                 rect.anchorMin = Vector2.zero;
                 rect.anchorMax = Vector2.one;
 
-                if (rectTransform.rect.width > rectTransform.rect.height)
+                if (rectTransform.rect.width < rectTransform.rect.height)
                 {
-                    float r = (float)rectTransform.rect.height / (float)rectTransform.rect.width;
+                    float r = (float)rectTransform.rect.height - (float)rectTransform.rect.width;
                     rect.sizeDelta = new Vector2
                     {
                         x = -_labelPadding,
-                        y = -_labelPadding * r
+                        y = -_labelPadding - r
                     };
                 }
                 else
                 {
-                    float r = (float)rectTransform.rect.width / (float)rectTransform.rect.height;
+                    float r = (float)rectTransform.rect.width - (float)rectTransform.rect.height;
                     rect.sizeDelta = new Vector2
                     {
-                        x = -_labelPadding * r,
+                        x = -_labelPadding - r,
                         y = -_labelPadding
                     };
                 }
@@ -512,6 +527,9 @@ namespace ExLib.Control.UIKeyboard
 
         public void OnPointerClick(PointerEventData eventData)
         {
+            if (!Selectable.interactable)
+                return;
+
             _isPressed = false;
 
             onRelease?.Invoke(this);
@@ -520,8 +538,11 @@ namespace ExLib.Control.UIKeyboard
 
         public void OnPointerDown(PointerEventData eventData)
         {
+            if (!Selectable.interactable)
+                return;
+
             _isPressed = true;
-            _labelSelectable.OnPointerDown(eventData);
+            LabelSelectable.OnPointerDown(eventData);
 
             onPressed?.Invoke(this);
             OnPressed?.Invoke(this);
@@ -529,17 +550,26 @@ namespace ExLib.Control.UIKeyboard
 
         public void OnPointerUp(PointerEventData eventData)
         {
-            _labelSelectable.OnPointerUp(eventData);
+            if (!Selectable.interactable)
+                return;
+
+            LabelSelectable.OnPointerUp(eventData);
         }
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            _labelSelectable.OnPointerEnter(eventData);
+            if (!Selectable.interactable)
+                return;
+
+            LabelSelectable.OnPointerEnter(eventData);
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            _labelSelectable.OnPointerExit(eventData);
+            if (!Selectable.interactable)
+                return;
+
+            LabelSelectable.OnPointerExit(eventData);
             if (!_isPressed)
                 return;
 

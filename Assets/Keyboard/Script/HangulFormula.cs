@@ -298,6 +298,7 @@ namespace ExLib.Control.UIKeyboard
                         {
                             _middleCombined = false;
                             temp = b;
+                            newEnd = a.Length;
                         }
                     }
                     else

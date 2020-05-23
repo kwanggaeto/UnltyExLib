@@ -21,8 +21,8 @@ namespace ExLib.Control.UIKeyboard
     [ExecuteInEditMode]
     public class Keyboard : MonoBehaviour
     {
+        public static bool verbose = false;
 
-        public static bool verbose = true;
         [Serializable]
         public class InputEndEvent : UnityEvent<KeyBase, string> { }
         [Serializable]
@@ -258,7 +258,6 @@ namespace ExLib.Control.UIKeyboard
                 /*_keys[i].onClick.RemoveListener(OnKeyPressed);
                 _keys[i].onClick.AddListener(OnKeyPressed);*/
 
-#if UNITY_EDITOR
                 if (_keys[i] == null)
                     continue;
 
@@ -267,7 +266,6 @@ namespace ExLib.Control.UIKeyboard
 
                 _keys[i].onRelease -= OnKeyRelease;
                 _keys[i].onRelease += OnKeyRelease;
-#endif
             }
         }
 
@@ -332,6 +330,7 @@ namespace ExLib.Control.UIKeyboard
                     _keys[i].SetTextStyle(font, fontSize, style, c);
 
                 _keys[i].SetKeyData(_languages.CurrentPack.Data[i], c);
+                _keys[i].Selectable.interactable = _languages.CurrentPack.Data[i].IsEnabled;
                 _keys[i].SetState();
             }
 
@@ -477,6 +476,9 @@ namespace ExLib.Control.UIKeyboard
                     break;
                 case KeyAction.Change:
                 case KeyAction.Done1:
+                    if (_inputField != null)
+                        _inputField.ProcessEvent(Event.KeyboardEvent("[enter]"));
+                    break;
                 case KeyAction.Done2:
                 case KeyAction.Done3:
                     if (_inputField != null && !string.IsNullOrEmpty(_inputField.text))
@@ -526,7 +528,6 @@ namespace ExLib.Control.UIKeyboard
 
         public void OnKeyRelease(KeyBase button)
         {
-            Debug.LogError(111);
             StopCoroutine("KeyPressedRoutine");
             switch (button.GetKeyAction())
             {
@@ -590,6 +591,10 @@ namespace ExLib.Control.UIKeyboard
 
         private void DeleteCharacter()
         {
+            /*if (_inputField != null)
+                _inputField.ProcessEvent(Event.KeyboardEvent("backspace"));
+
+            return;*/
             string inputValue = _inputField.text;
 
             LanguageFormulaBase formula = _languages.CurrentFormula;
