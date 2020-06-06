@@ -1,8 +1,8 @@
 {
   "name": "com.excellency.lib",
   "displayName": "Excellency Unity Library",
-  "version": "1.0.0",
-  "unity": "2019.2",
+  "version": "1.0.1",
+  "unity": "2019.3",
   "keywords": ["ExLib", "Excellency", "exlib", "excellency"],
   "description": "개인용 유니티 라이브러리",
   "dependencies": {}

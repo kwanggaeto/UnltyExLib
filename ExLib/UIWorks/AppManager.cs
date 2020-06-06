@@ -25,7 +25,7 @@ namespace ExLib
 
         protected virtual void OnStandbyTimeout()
         {
-            UIWorks.ViewManager<U>.Instance.SetView(ViewType.Main);
+            UIWorks.ViewManager<U>.Instance.ChangeView(ViewType.Main);
         }
 
         protected virtual void OnChangedView(ViewType changedView)
