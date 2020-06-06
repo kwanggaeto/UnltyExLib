@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<smtpSettings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<port>587</port>
-	<ssl>true</ssl>
-	<timeout>60000</timeout>
-	<senderName>Anonymous</senderName>
-	<poolLength>0</poolLength>
-	<sendSimultaneously>0</sendSimultaneously>
-</smtpSettings>
