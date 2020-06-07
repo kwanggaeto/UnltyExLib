@@ -111,7 +111,7 @@ namespace ExLib.Utils
 
             public string GetPath(string key)
             {
-                foreach(var da in Assets)
+                foreach (var da in Assets)
                 {
                     if (da.Key.Equals(key))
                     {
@@ -143,12 +143,12 @@ namespace ExLib.Utils
             {
                 int count = Assets.Count;
 
-                CheckCount:
+            CheckCount:
                 foreach (var a in Assets)
                 {
                     Match m = Regex.Match(a.Key, @"\d+");
                     string numStr = m.ToString();
-                    
+
                     if (string.IsNullOrEmpty(numStr))
                     {
                         continue;
@@ -228,7 +228,7 @@ namespace ExLib.Utils
 
             public bool HasValue()
             {
-                return Type!=null && Asset != Type.GetDefaultValue();
+                return Type != null && Asset != Type.GetDefaultValue();
             }
 
             public void DestroyAsset(bool destroy = true)
@@ -450,7 +450,7 @@ namespace ExLib.Utils
             if (!IsLoaded)
                 return;
 
-            lock(_assets)
+            lock (_assets)
             {
                 foreach (AssetInfo info in _assets.Values)
                 {
@@ -623,7 +623,7 @@ namespace ExLib.Utils
                     if (isRelatedStreamingAssets)
                         f = System.IO.Path.Combine(Application.streamingAssetsPath, f);
 
-                    lock(_assets)
+                    lock (_assets)
                     {
                         _assets.Add(key, new AssetInfo { Asset = new System.IO.FileInfo(f), Type = typeof(System.IO.FileInfo) });
                         filename = asset.File;
@@ -645,7 +645,7 @@ namespace ExLib.Utils
                     assetPath = Regex.Replace(assetPath, @"\\", "/");
 
                     string[] files = System.IO.Directory.GetFiles(assetPath, "*", SearchOption.AllDirectories);
-                    for(int j = 0; j < files.Length; j++)
+                    for (int j = 0; j < files.Length; j++)
                     {
                         string path = files[j];
 
@@ -670,8 +670,8 @@ namespace ExLib.Utils
                             AssetType = RecognizeAssetType(path),
                             Key = fileKey,
                             LoadType = LoadType.Preload,
-                            NoMipMap = true,
-                            NonReadable = false
+                            NoMipMap = asset.NoMipMap,
+                            NonReadable = asset.NonReadable
                         };
 
                         _assetList.Assets.Add(newAsset);
@@ -868,7 +868,7 @@ namespace ExLib.Utils
 
         public void AddAsset<T>(T obj, string key)
         {
-            lock(_assets)
+            lock (_assets)
             {
                 if (_assets.ContainsKey(key))
                     return;
@@ -985,11 +985,11 @@ namespace ExLib.Utils
         /// <param name="type"></param>
         /// <param name="callback"></param>
         /// <returns></returns>
-        public AsyncAsset GetAsset(string key, System.Type type, UnityEngine.Events.UnityAction<bool,object> callback = null)
+        public AsyncAsset GetAsset(string key, System.Type type, UnityEngine.Events.UnityAction<bool, object> callback = null)
         {
             if (!IsLoaded)
                 return null;
-            lock(_assets)
+            lock (_assets)
             {
                 System.Type cbType = typeof(UnityEngine.Events.UnityAction<,>);
                 MethodInfo method = GetGetAssetMethodInfo();
@@ -999,7 +999,7 @@ namespace ExLib.Utils
             }
         }
 
-        public AsyncAsset GetAsset<T>(string key, UnityEngine.Events.UnityAction<bool,T> callback = null)
+        public AsyncAsset GetAsset<T>(string key, UnityEngine.Events.UnityAction<bool, T> callback = null)
         {
             if (!IsLoaded)
                 return null;
@@ -1161,10 +1161,10 @@ namespace ExLib.Utils
                 path = System.IO.Path.Combine(Application.streamingAssetsPath, file.File);
 
             int tryCount = 0;
-            LoadStart:
+        LoadStart:
             if (verbose)
                 Debug.LogFormat("loading : {0}", path);
-            using (UnityWebRequest req = new UnityWebRequest((isWeb?string.Empty:@"file:///")+path))
+            using (UnityWebRequest req = new UnityWebRequest((isWeb ? string.Empty : @"file:///") + path))
             {
                 if (typeof(T).Equals(typeof(Texture2D)))
                 {
@@ -1200,7 +1200,7 @@ namespace ExLib.Utils
                 {
                     if (ao != null)
                     {
-                        ao.Progress = async.progress>=1f?0.9f:async.progress;
+                        ao.Progress = async.progress >= 1f ? 0.9f : async.progress;
                     }
 
                     yield return null;
@@ -1254,7 +1254,7 @@ namespace ExLib.Utils
                         Texture2D newTex;
 
                         if (_isTexturePool)
-                            newTex = _texturePool.GetTexture(new Vector2Int { x=1620,y= 960 });
+                            newTex = _texturePool.GetTexture(new Vector2Int { x = 1620, y = 960 });
                         else
                             newTex = new Texture2D(512, 512);
 
@@ -1322,7 +1322,7 @@ namespace ExLib.Utils
 
                 if (file.LoadType == LoadType.Preload)
                 {
-                    lock(_assets)
+                    lock (_assets)
                     {
                         string key = string.IsNullOrEmpty(file.Key) ? Path.GetFileName(file.File) : file.Key;
                         if (_assets.ContainsKey(key))
