@@ -178,13 +178,13 @@ namespace ExLib.UIWorks
 
         }
 
-        public void ForcedUnlock()
+        public virtual void ForcedUnlock()
         {
             _lockCount = 0;
             _inputPreventor.SetActive(false);
         }
 
-        public void Unlock()
+        public virtual void Unlock()
         {
             _lockCount--;
 
@@ -195,7 +195,7 @@ namespace ExLib.UIWorks
             }
         }
 
-        public void Lock()
+        public virtual void Lock()
         {
             _lockCount++;
 
