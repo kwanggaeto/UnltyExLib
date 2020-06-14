@@ -25,12 +25,12 @@ namespace ExLib
 
         protected virtual void OnStandbyTimeout()
         {
-            UIWorks.ViewManager<U>.Instance.ChangeView(ViewType.Main);
+            UIWorks.ViewManager<U>.Instance.ChangeView(UIWorks.ViewType.GetFirstViewType());
         }
 
-        protected virtual void OnChangedView(ViewType changedView)
+        protected virtual void OnChangedView(UIWorks.ViewType changedView)
         {
-            if (changedView == ViewType.Main)
+            if (changedView == UIWorks.ViewType.GetFirstViewType())
             {
                 BaseManager.Instance.StandbyStop();
             }
