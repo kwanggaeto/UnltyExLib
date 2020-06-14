@@ -5,12 +5,7 @@ using UnityEngine;
 
 namespace ExLib.UIWorks
 {
-    [RequireComponent(typeof(CanvasGroup))]
-    public abstract class View : ViewObjectBase
+    public abstract class View : ViewBase<ViewType>
     {
-        [SerializeField, ViewTypeDrawer]
-        protected ViewType _viewType;
-
-        public ViewType ViewType { get { return _viewType; } }
     }
 }

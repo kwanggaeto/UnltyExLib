@@ -11,10 +11,6 @@ using UnityEngine.UI;
 
 namespace ExLib.UIWorks
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <typeparam name="T">input type of self</typeparam>
     public abstract class ViewManager<T> : ExLib.Singleton<T> where T : ViewManager<T>
     {
         public interface IBackHandlers
@@ -26,7 +22,7 @@ namespace ExLib.UIWorks
             void Clear();
         }
 
-        protected class BackHandlerStack : IBackHandlers
+        private class BackHandlerStack : IBackHandlers
         {
             private Stack<Action> _handlers;
 
@@ -58,23 +54,20 @@ namespace ExLib.UIWorks
 
         [Space]
         [SerializeField]
-        protected View[] _views;
-
-        [SerializeField, ViewTypeDrawer]
-        protected ViewType _startView;
+        private View[] _views;
 
         [SerializeField]
-        protected GameObject[] _inputPreventors;
+        private ViewType _startView;
 
         [SerializeField]
-        protected MonoBehaviour[] _extraEnabledInputPreventors;
+        private GameObject _inputPreventor;
 
-        protected ViewType _currentViewType;
-        protected View _currentView;
-        protected View _nextView;
-        protected View _prevView;
+        private ViewType _currentViewType;
+        private View _currentView;
+        private View _nextView;
+        private View _prevView;
 
-        protected int _lockCount;
+        private int _lockCount;
 
         public event Action<ViewType> onChangedView;
 
@@ -188,16 +181,7 @@ namespace ExLib.UIWorks
         public virtual void ForcedUnlock()
         {
             _lockCount = 0;
-
-            foreach(var obj in _inputPreventors)
-            {
-                obj.SetActive(false);
-            }
-
-            foreach (var obj in _extraEnabledInputPreventors)
-            {
-                obj.enabled = true;
-            }
+            _inputPreventor.SetActive(false);
         }
 
         public virtual void Unlock()
@@ -207,15 +191,7 @@ namespace ExLib.UIWorks
             if (_lockCount <= 0)
             {
                 _lockCount = 0;
-                foreach (var obj in _inputPreventors)
-                {
-                    obj.SetActive(false);
-                }
-
-                foreach (var obj in _extraEnabledInputPreventors)
-                {
-                    obj.enabled = true;
-                }
+                _inputPreventor.SetActive(false);
             }
         }
 
@@ -223,15 +199,7 @@ namespace ExLib.UIWorks
         {
             _lockCount++;
 
-            foreach (var obj in _inputPreventors)
-            {
-                obj.SetActive(true);
-            }
-
-            foreach (var obj in _extraEnabledInputPreventors)
-            {
-                obj.enabled = false;
-            }
+            _inputPreventor.SetActive(true);
         }
     }
 }
