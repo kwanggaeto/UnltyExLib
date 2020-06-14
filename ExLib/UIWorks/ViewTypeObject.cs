@@ -30,6 +30,7 @@ namespace ExLib.UIWorks
 
         public static ViewTypeObject Instance { get; private set; }
 
+#if UNITY_EDITOR
         [InitializeOnLoadMethod]
         private static void OnInitialized()
         {
@@ -46,8 +47,7 @@ namespace ExLib.UIWorks
             }
             else
             {
-                Debug.Log(1111111);
-
+                Debug.Log("Create View Type File");
                 Instance = CreateInstance<ViewTypeObject>();
                 if (!AssetDatabase.IsValidFolder("Assets/Resources"))
                     AssetDatabase.CreateFolder("Assets", "Assets/Resources");
@@ -57,6 +57,7 @@ namespace ExLib.UIWorks
                 AssetDatabase.Refresh();
             }
         }
+#endif
 
         private void Awake()
         {            
