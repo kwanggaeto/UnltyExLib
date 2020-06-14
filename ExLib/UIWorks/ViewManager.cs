@@ -99,7 +99,7 @@ namespace ExLib.UIWorks
         {
             foreach (var v in _views)
             {
-                if (v.ViewType == view)
+                if (v.ViewType.Equals(view))
                     return v;
             }
 
@@ -112,7 +112,7 @@ namespace ExLib.UIWorks
             if (newView == null)
                 return;
 
-            if (_currentView != null && _currentViewType == newView.ViewType)
+            if (_currentView != null && _currentViewType.Equals(newView.ViewType))
                 return;
 
             var method = newView.GetSetContextMethod<T>();
@@ -142,7 +142,7 @@ namespace ExLib.UIWorks
             if (newView == null)
                 return;
 
-            if (_currentView != null && _currentViewType == view.ViewType && !forced)
+            if (_currentView != null && _currentViewType.Equals(view.ViewType) && !forced)
                 return;
 
             _PreSetView(newView);

@@ -30,7 +30,7 @@ namespace ExLib
 
         protected virtual void OnChangedView(UIWorks.ViewType changedView)
         {
-            if (changedView == UIWorks.ViewType.GetFirstViewType())
+            if (changedView.Equals(UIWorks.ViewType.GetFirstViewType()))
             {
                 BaseManager.Instance.StandbyStop();
             }
