@@ -226,7 +226,6 @@ namespace ExLib.UIWorks
             IsShown = false;
             DOTween.Kill(this);
             Sequence sq = DOTween.Sequence();
-            sq.SetId(this);
             _Hide(sq);
 
             sq.onComplete += () => gameObject.SetActive(false);
